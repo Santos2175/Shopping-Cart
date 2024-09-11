@@ -32,15 +32,25 @@ const Detail = () => {
     }
   }, [slug]);
   return (
-    <div>
-      <h2 className='text-3xl text-center'>Product Details</h2>
-      <div className='grid grid-cols-2 gap-5 mt-5'>
+    <div className='px-4'>
+      <h2 className='text-3xl font-semibold text-center text-gray-600 my-5'>
+        Product Details
+      </h2>
+      <div className='grid grid-cols-2 gap-5 mt-6 max-sm:grid-cols-1'>
         <div>
-          <img src={detail.image} alt='product-image' className='w-full' />
+          <img
+            src={detail.image}
+            alt='product-image'
+            className='w-full object-cover object-top'
+          />
         </div>
-        <div className='flex flex-col gap-5'>
-          <h1 className='text-4xl uppercase font-bold'>{detail.name}</h1>
-          <p className='font-bold text-3xl'>Rs.{detail.price}</p>
+        <div className='flex flex-col gap-5 mt-8 max-sm:mt-3'>
+          <h1 className='text-4xl max-sm:text-3xl uppercase font-bold text-slate-600 leading-normal tracking-normal'>
+            {detail.name}
+          </h1>
+          <p className='font-semibold text-2xl text-slate-600'>
+            Rs. <span className='text-4xl text-slate-700'>{detail.price}</span>
+          </p>
           <div className='flex gap-5'>
             <div className='flex gap-2 justify-center items-center'>
               <button
@@ -58,12 +68,14 @@ const Detail = () => {
               </button>
             </div>
             <button
-              className='bg-slate-900 text-white px-7 py-3 rounded-xl shadow-2xl'
+              className='bg-slate-700 hover:bg-slate-800 text-slate-300 px-7 py-3 rounded-xl shadow-2xl'
               onClick={handleAddToCart}>
               Add To Cart
             </button>
           </div>
-          <p>{detail.description}</p>
+          <p className='text-xl text-slate-600 leading-normal tracking-normal'>
+            {detail.description}
+          </p>
         </div>
       </div>
     </div>

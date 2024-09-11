@@ -13,12 +13,12 @@ const ProductCard = ({ id, name, price, image, description, slug }) => {
   };
 
   return (
-    <div className='bg-white p-5 rounded-xl shadow-sm'>
+    <div className='bg-gray-100 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
       <Link to={slug}>
         <img
           src={image}
           alt='product-image'
-          className='w-full h-80 object-cover object-top drop-shadow-[0_80px_30px_#0007]'
+          className='w-full h-70 object-cover object-top transition-transform duration-300 ease-in-out transform hover:scale-110 drop-shadow-[0_80px_30px_#0007]'
         />
       </Link>
 
@@ -31,10 +31,12 @@ const ProductCard = ({ id, name, price, image, description, slug }) => {
           <span className='text-2xl font-medium text-slate-500'>{price}</span>
         </p>
         <button
-          className='max-sm:flex-1 bg-gray-300 p-2 text-md rounded-md hover:bg-gray-400 flex justify-center items-center gap-3'
+          className='max-sm:flex-1 bg-gray-300 p-2 text-md rounded-md hover:bg-gray-400 transition-colors duration-300 ease-in-out flex justify-center items-center gap-3'
           onClick={handleAddToCart}>
           <img src={iconCart} alt='' className='w-5 h-5 flex-start' />
-          Add to Cart
+          <span className='whitespace-nowrap text-gray-600 font-semibold'>
+            Add to Cart
+          </span>
         </button>
       </div>
     </div>

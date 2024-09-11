@@ -23,9 +23,11 @@ const Header = () => {
     dispatch(toggleStatusTab());
   };
   return (
-    <header className='flex justify-between items-center mb-5'>
-      <Link to='/' className='text-xl font-semibold'>
-        Shopping Cart
+    <header className='flex justify-between items-center mb-5 p-5 border-0 shadow-sm'>
+      <Link
+        to='/'
+        className='text-3xl font-bold tracking-tighter  text-gray-600 hover:text-gray-500 transition-colors'>
+        Shopify
       </Link>
       <div
         className='w-10 h-10 bg-gray-100 rounded-full flex justify-center items-center relative cursor-pointer'

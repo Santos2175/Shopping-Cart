@@ -23,16 +23,16 @@ const CartTab = () => {
         statusTab === false ? 'translate-x-full' : ''
       }`}>
       <h2 className='p-5 text-white text-2xl text-center'>Shopping Cart</h2>
-      <div className='p-5'>
+      <div className='p-5 overflow-y-scroll'>
         {carts.length !== 0 &&
           carts.map((item, index) => <CartItem key={index} data={item} />)}
       </div>
       <div className='p-5 bg-slate-600'>
         <p className='flex items-center justify-center text-white'>
-          <span className='text-xl font-semibold tracking-wider'>Total: </span>{' '}
-          <span className='text-2xl font-semibold tracking-wide'>
-            Rs.{total}
+          <span className='text-xl font-semibold tracking-wider'>
+            Total: Rs.
           </span>
+          <span className='text-2xl font-semibold tracking-wide'>{total}</span>
         </p>
       </div>
       <div className='grid grid-cols-2'>
