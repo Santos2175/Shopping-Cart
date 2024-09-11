@@ -21,6 +21,16 @@ const cartSlice = createSlice({
       }
       localStorage.setItem('carts', JSON.stringify(state.items));
     },
+    changeQuantity: (state, action) => {
+      const { productId, quantity } = action.payload;
+      const existingItem = state.items.find((item) => item.id === productId);
+      if (quantity > 0) {
+        existingItem.quantity = quantity;
+      } else {
+        state.items = state.items.filter((item) => item.id !== productId);
+      }
+      localStorage.setItem('carts', JSON.stringify(state.items));
+    },
     toggleStatusTab: (state) => {
       if (state.statusTab === false) {
         state.statusTab = true;
@@ -31,6 +41,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, toggleStatusTab } = cartSlice.actions;
+export const { addToCart, toggleStatusTab, changeQuantity } = cartSlice.actions;
 
 export default cartSlice.reducer;
