@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleStatusTab } from '../stores/cartSlice';
+import { toggleStatusTab } from '../stores/cartSlice.js';
 import CartItem from './CartItem.jsx';
 import { products } from '../utils/product.js';
 
 const CartTab = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const carts = useSelector((store) => store.cart.items);
   const statusTab = useSelector((store) => store.cart.statusTab);
@@ -39,7 +41,20 @@ const CartTab = () => {
         <button className='bg-black text-white' onClick={handleStatusTab}>
           CLOSE
         </button>
-        <button className='bg-amber-500 text-white'>CHECKOUT</button>
+        <button
+          className='bg-amber-500 text-white'
+          onClick={() => {
+            if (localStorage.getItem('carts')) {
+              window.alert('Payment successfull. Thank you!!');
+              localStorage.removeItem('carts');
+              navigate('/');
+              window.location.reload();
+            } else {
+              return;
+            }
+          }}>
+          CHECKOUT
+        </button>
       </div>
     </div>
   );

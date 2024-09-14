@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import iconCart from '../assets/images/iconCart.png';
-import { addToCart } from '../stores/cartSlice';
+import { addToCart } from '../stores/cartSlice.js';
 
 const ProductCard = ({ id, name, price, image, description, slug }) => {
   const carts = useSelector((store) => store.cart.items);

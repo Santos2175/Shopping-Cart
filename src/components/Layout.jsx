@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from './Header';
-import CartTab from './CartTab';
+import Header from './Header.jsx';
+import CartTab from './CartTab.jsx';
 import { useSelector } from 'react-redux';
 
 const Layout = () => {

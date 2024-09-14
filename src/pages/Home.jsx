@@ -1,5 +1,5 @@
 import React from 'react';
-import { products } from '../utils/product';
+import { products } from '../utils/product.js';
 import ProductCard from '../components/ProductCard.jsx';
 
 const Home = () => {

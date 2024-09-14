@@ -1,6 +1,6 @@
-import Layout from './components/Layout';
-import Home from './pages/home';
-import Detail from './pages/Detail';
+import Layout from './components/Layout.jsx';
+import Home from './pages/Home.jsx';
+import Detail from './pages/Detail.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 

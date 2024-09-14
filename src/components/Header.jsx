@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import iconCart from '../assets/images/iconCart.png';
-import { toggleStatusTab } from '../stores/cartSlice';
+import { toggleStatusTab } from '../stores/cartSlice.js';
 import { useDispatch } from 'react-redux';
 
 import React from 'react';
